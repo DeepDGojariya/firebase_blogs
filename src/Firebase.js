@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged} from "firebase/auth"
+import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth"
 import { useEffect } from "react";
 import { useState } from "react";
+import {getFirestore} from "firebase/firestore"
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -14,22 +14,29 @@ import { useState } from "react";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC-eSzUde9ktN806Pwv_dNFNcMNbJRsbSo",
-  authDomain: "bloggerbob-d744e.firebaseapp.com",
-  projectId: "bloggerbob-d744e",
-  storageBucket: "bloggerbob-d744e.appspot.com",
-  messagingSenderId: "782939281491",
-  appId: "1:782939281491:web:92f3cbe7394c9e54a9cea6",
-  measurementId: "G-0NL2KBFEG8"
-};
+    apiKey: "AIzaSyCssajMgot0xcv8FQeHyeGbomZDacGRIpc",
+    authDomain: "blog-app-89d47.firebaseapp.com",
+    projectId: "blog-app-89d47",
+    storageBucket: "blog-app-89d47.appspot.com",
+    messagingSenderId: "563464140507",
+    appId: "1:563464140507:web:9f5d1eb8125462b108befe"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth= getAuth();
+export const db = getFirestore(app)
 
-export default function signup (email,password){
+export const signup =  (email,password)=>{
     return createUserWithEmailAndPassword(auth,email,password)
+}
+
+export const logout = ()=>{
+    return signOut(auth)
+}
+
+export const signin = (email,password)=>{
+    return signInWithEmailAndPassword(auth,email,password)
 }
 
 export const useAuth =()=>{
@@ -41,4 +48,7 @@ export const useAuth =()=>{
         },[])
         return currentUser
 }
+
+
+
 
