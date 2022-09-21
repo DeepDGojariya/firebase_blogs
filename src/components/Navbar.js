@@ -9,7 +9,7 @@ export const Navbar = (props) => {
     navigate("/")
 
   }
-  console.log(props.currentUser);
+  
 
 
   return (
@@ -28,9 +28,6 @@ export const Navbar = (props) => {
                   <Link className="nav-link active" aria-current="page" to="/">Login</Link>
                 </li>}
                 {props.currentUser&&<>
-                <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/Bloggers">Bloggers</Link>
-                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/Bloglist">All Blogs</Link>
                 </li>
