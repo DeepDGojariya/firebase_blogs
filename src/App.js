@@ -1,6 +1,5 @@
 import './App.css';
 import Bloglist  from './components/Bloglist';
-import { Bloggers } from './components/Bloggers';
 import { Addblog } from './components/Addblog';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Authentication from './components/Authentication';
@@ -18,7 +17,6 @@ function App() {
       <Routes>
       <Route path="/" element={<Authentication/>}/>
         <Route path="/Bloglist" element={<Bloglist />}/>
-        <Route path="/Bloggers" element={<Bloggers />} />
         <Route path="/Addblog" element={<Addblog currentUser={user}/>} />
         <Route path="/MyBlogs" element={<MyBlogs currentUser={user}/>} />
         
