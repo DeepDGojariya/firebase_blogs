@@ -12,6 +12,7 @@
 /build
 firebase.json
 .firebaseserc
+/.firebase
 
 # misc
 .DS_Store
