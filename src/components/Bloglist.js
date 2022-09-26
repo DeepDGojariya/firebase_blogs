@@ -15,12 +15,12 @@ export default function Bloglist() {
       setBlogs(dummy_list)
     }
     fetchData()
-  }, [blogs])
+  }, [])
 
   return (
     <>
-
-      <div className="container">
+      
+      <div className="container" style={{color:"white"}}>
         {blogs && blogs.map((blog,index) => (
           <div key={index} className="card my-2 bg-dark" >
             <div className="card-body">

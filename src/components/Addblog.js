@@ -16,7 +16,7 @@ export const Addblog = ({currentUser}) => {
       description
     }
     await addDoc(blogsCollection,data)
-    navigate("/Bloglist")
+    navigate("/MyBlogs")
   }
 
   return (
